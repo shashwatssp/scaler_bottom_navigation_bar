@@ -31,9 +31,12 @@ class _PropertiesState extends State<Properties> {
         appBar: AppBar(
           title: Text('Bottom Navigation Bar'),
         ),
-        body: IndexedStack(
-          index: _currentIndex,
-          children: _pages,
+        body: PageStorage(
+          child: IndexedStack(
+            index: _currentIndex,
+            children: _pages,
+          ),
+          bucket: PageStorageBucket(),
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
